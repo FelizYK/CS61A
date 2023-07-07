@@ -1,16 +1,13 @@
 from operator import add, mul
 
 
-def square(x): return x * x
+square = lambda x: x * x
 
+identity = lambda x: x
 
-def identity(x): return x
+triple = lambda x: 3 * x
 
-
-def triple(x): return 3 * x
-
-
-def increment(x): return x + 1
+increment = lambda x: x + 1
 
 
 HW_SOURCE_FILE = __file__
@@ -37,7 +34,7 @@ def product(n, term):
     """
     "*** YOUR CODE HERE ***"
     i, ans = 1, 1
-    while (i <= n):
+    while i <= n:
         ans *= term(i)
         i += 1
     return ans
@@ -68,9 +65,8 @@ def accumulate(merger, start, n, term):
     16
     """
     "*** YOUR CODE HERE ***"
-
     i = 1
-    while (i <= n):
+    while i <= n:
         start = merger(start, term(i))
         i += 1
     return start
